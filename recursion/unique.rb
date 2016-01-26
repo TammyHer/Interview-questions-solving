@@ -12,7 +12,7 @@ def unique(str)
 end
 
 def unique_re(str)
-  return str if str.length == 2
+  return str if str.length == 1
   return false if str.chop.include?(str[-1])
   # binding.pry
   unique_re(str.chop)
