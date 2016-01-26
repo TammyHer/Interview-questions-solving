@@ -1,4 +1,4 @@
-#Design a method that returns true
+# Design a method that returns true
 #  if element n is a member of the array and false if not
 
 def search(array, n)
