@@ -34,3 +34,15 @@ def square_digits(num)
    return stringNums.to_i
    
 end
+
+
+#Other selutions
+
+def square_digits num
+  num.to_s.split('').map{|v| v.to_i * v.to_i}.join.to_i
+end
+
+def square_digits num
+  # code goes here
+  num.to_s.chars.map{|x| x.to_i**2}.join.to_i
+end
