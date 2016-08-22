@@ -23,3 +23,10 @@ def XO(str)
   
   return count == 0
 end
+
+#Other selotuins
+
+def XO(str)
+  str.downcase!
+  str.count('o') == str.count('x')
+end
