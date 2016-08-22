@@ -21,15 +21,15 @@ def square_digits(num)
   startP = 0
   endP = arr_nums.length-1
   
-  while startP < endP || startP != endP
-    temp = arr_num[startP]
-    arr_num[startP] = arr_num[endP]
-    arr_num[endP] = temp
+  while startP < endP 
+    temp = arr_nums[startP]
+    arr_nums[startP] = arr_nums[endP]
+    arr_nums[endP] = temp
     endP -= 1
     startP += 1
   end
    
-   arr_num.each { |i| stringNums += i }
+   arr_nums.each { |i| stringNums += i.to_s }
    
    return stringNums.to_i
    
