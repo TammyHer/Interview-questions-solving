@@ -7,41 +7,27 @@
 # spinWords( "This is another test" )=> returns "This is rehtona test"
 
 def spinWords(string)
-  currentState = "ready"
-  result = ""
-
-  for i in 0..string.length-1
-    if string[i] != " "
-      if currentState == "ready"
-        currentStart = "word"
-        startIndx = i
-        count = 1
-      elsif currentState == "word"
-        count += 1
-        if string[i+1] == " " || string[i+1] == nil
-          endIndx = i
-          result += revers(string, startIndx, endIndx) if count > 4
-          result += string[startIndx..endIndx] if count < 5
-        end
-      end
-     else
-       currentState = "ready"
-       count = 0
-       result += " "
-     end
+result = ""
+  string = string.split(" ")
+  string.map { |word| word = revers(word) if word.length > 4 }
+  string.each do |word|
+    result += word + " "
   end
-  return result
+return result.chomp(" ")
+
 end
 
-def revers(string, startIndx, endIndx)
-  while endIndx != startIndx || startIndx < endIndx
-    temp = string[startIndx]
-    string[startIndx] = string[endIndx]
-    string[endIndx] = temp
-    startIndx += 1
-    endIndx -= 1
+def revers(string)
+  startP = 0
+  endP = string.length-1
+
+  while startP < endP
+    temp = string[startP]
+    string[startP] = string[endP]
+    string[endP] = temp
+    startP += 1
+    endP -= 1
   end
   return string
 end
-
 
