@@ -31,3 +31,21 @@ def revers(string)
   return string
 end
 
+# others code
+def spinWords(string)
+  string.split.map { |s| s.length >= 5 ? s.reverse : s }.join ' '
+end
+
+
+
+def spinWords(string)
+  tokens = string.split(' ')
+  newTokens = []
+  tokens.each do |token|
+    if token.size >= 5
+      token.reverse!
+    end
+    newTokens.push(token)
+  end
+  return newTokens.join(' ')
+end
